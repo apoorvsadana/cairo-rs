@@ -114,6 +114,7 @@ impl HashBuiltinRunner {
                 _ => return Err(RunnerError::FailedStringConversion),
             };
             //Compute pedersen Hash
+            println!("Hashing these 2 values - {:?} {:?}", x, y);
             let fe_result = pedersen_hash(&x, &y);
             //Convert result from FieldElement to MaybeRelocatable
             let r_byte_slice = fe_result.to_bytes_be();
